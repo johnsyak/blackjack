@@ -6,6 +6,10 @@ public class Hand {
 	ArrayList<Card> hand;
 	public boolean playerStop;
 	
+	public Hand(){
+		this.hand = new ArrayList<Card>();
+		this.playerStop = false;
+	}
 	public void hitCard(Card card){
 		hand.add(card);
 	}

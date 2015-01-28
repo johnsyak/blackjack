@@ -35,15 +35,16 @@ public class Controller {
 		for(int i = 0; i < numHands; i++){
 			playerHands.add(initBuildPlayerHand(deck));
 		}
+		Scoring.init();
 		table = new Table(deck, playerHands);
 	}
 	
-	public void playerTurnPhase(String input, Deck deck, Hand hand){
-		String hitOrStay = "";
-		if(hand.playerStop = false){
+	public void playerUpdate(String input, Deck deck, Hand hand){
+		String hitOrStay = "hit";
+		if(hand.playerStop == false){
 			if(input.equals(hitOrStay)){
 				hand.hitCard(deck.drawCard());
-				getScoring(hand.getCards());
+				
 			}
 		
 			else{
@@ -52,12 +53,24 @@ public class Controller {
 		}
 	}
 	
-	public void getScoring(ArrayList<Card> hand){
-		Scoring scoring = new Scoring(hand);
+	public Table getTable(){
+		return table;
 	}
-
-	public void continueGame(){
-		
+	
+	public boolean allPlayersStopped(){
+		for(Hand h : table.getHands()){
+			if(!h.playerStop){
+				return false;
+			}
+		}
+		return true;
 	}
 }
 
+
+/*
+ * run everything
+ * init everything
+ * game loop
+ * clean-up
+ */
