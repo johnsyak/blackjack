@@ -3,14 +3,20 @@ package model;
 import java.util.ArrayList;
 
 public class Table {
-	ArrayList<Card> deck = new ArrayList<Card>();
-	ArrayList<Card> hands = new ArrayList<Card>();
+	Deck deck;
+	ArrayList<Hand> hands;
 	
-	public ArrayList<Card> getDeck(){
+	public Table(Deck deck, ArrayList<Hand> hands){
+		this.deck = deck;
+		this.hands = hands;
+	}
+	
+	
+	public Deck getDeck(){
 		return deck;
 	}	
 	
-	public ArrayList<Card> getHands(){
+	public ArrayList<Hand> getHands(){
 		return hands;
 	}
 	

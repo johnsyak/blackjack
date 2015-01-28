@@ -18,7 +18,6 @@ public class Deck {
 				cards.add(new Card(Card.Suit.values()[i], Card.Rank.values()[n]));
 			}
 		}
-		
 	}
 	
 	public void shuffleDeck(){

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Hand {
 	ArrayList<Card> hand;
+	public boolean playerStop;
 	
 	public void hitCard(Card card){
 		hand.add(card);
@@ -16,6 +17,11 @@ public class Hand {
 		}
 		return visibleHand;
 	}
+	
+	public ArrayList<Card> getCards(){
+		return hand;
+	}
+	
 }
 
 
